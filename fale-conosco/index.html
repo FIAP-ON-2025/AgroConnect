@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConnect - Fale Conosco</title>
+    <link rel="icon" href="../logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="../style.css"> 
+    
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../logo_horizontal_ofc.png" alt="AgroConnect Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../cadastro/index.html"> Cadastre-se</a></li>
+            <li><a href="../fale-conosco/index.html">Fale Conosco</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <h1 style="font-size: 3.5em;">Entre em Contato</h1>
+            <p class="tagline" style="font-size: 1.3em;">Sua opinião e suas dúvidas nos ajudam a crescer</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" id="contato-form">
+            <h2 class="section-title" style="font-size: 2.2em;">💬 Envie sua Mensagem</h2>
+
+            <div class="content-section form-center"> 
+                
+                <div class="card form-card"> 
+                    
+                    <h3 style="font-size: 1.6em; font-weight: 700; color: var(--primary);">Estamos Prontos para Ajudar!</h3>
+                    <p style="font-size: 1em; color: var(--gray-dark); margin-bottom: 30px;">
+                        Preencha o formulário e nossa equipe AgroConnect responderá em breve.
+                    </p>
+
+                    <form id="form-contato">
+                        <fieldset style="border: none; padding: 0;">
+                            <div class="input-group">
+                                <label for="nome"><i class="fa-solid fa-user"></i> Nome</label>
+                                <input id="nome" name="nome" type="text" placeholder="Seu nome completo"/>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+                                <input id="email" name="email" type="email" placeholder="seu.email@exemplo.com"/>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="telefone"><i class="fa-solid fa-phone"></i> Telefone</label>
+                                <input id="telefone" name="telefone" type="tel" pattern="[0-9]{10,11}" placeholder="Somente números"/>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="assunto"><i class="fa-solid fa-tag"></i> Assunto:</label>
+                                <select id="assunto" name="assunto" required style="width: 100%; padding: 12px; border: 2px solid var(--gray-medium); border-radius: 10px; font-size: 0.95em; background: var(--light); box-shadow: var(--shadow-sm);">
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="duvida_cadastro">Dúvida de Cadastro</option>
+                                    <option value="problema_tecnico">Problema Técnico (bug)</option>
+                                    <option value="sugestao">Sugestão</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="assunto_comercial">Assunto Comercial</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+             
+                            <div class="input-group">
+                                <label for="outrosAssunto" id="outrosAssuntoLabel" style="display: none;"><i class="fa-solid fa-pencil"></i> Especifique:</label>
+                                <input type="text" id="outrosAssunto" name="outrosAssunto" style="display: none;" placeholder="Descreva o assunto">
+                            </div>
+                             
+                            <div class="input-group">
+                                <label for="mensagem"><i class="fa-solid fa-comment-dots"></i> Sua mensagem</label>
+                                <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem detalhada aqui..." rows="4"></textarea> 
+                            </div>
+                            
+                        </fieldset>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 30px; font-size: 1.05em;">
+                            <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+
+                     <div id="mensagemEnviada" style="margin-top: 20px; font-weight: 600; color: var(--primary);"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section"><h4>Sobre</h4><ul><li><a href="#">Quem Somos</a></li></ul></div>
+            <div class="footer-section"><h4>Recursos</h4><ul><li><a href="#">Blog</a></li></ul></div>
+            <div class="footer-section"><h4>Legal</h4><ul><li><a href="#">Privacidade</a></li></ul></div>
+            <div class="footer-section"><h4>Conecte-se</h4><ul><li><a href="#">Twitter</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AgroConnect. Todos os direitos reservados. Transformando a agricultura, combatendo a fome.</p>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    </body>
+</html>

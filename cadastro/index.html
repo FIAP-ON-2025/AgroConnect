@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConnect - Criar Conta</title>
+    <link rel="icon" href="../logo.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="../style.css"> 
+
+    <script src="./cadastro.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../logo_horizontal_ofc.png" alt="AgroConnect Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="./index.html"> Cadastre-se</a></li>
+            <li><a href="../fale-conosco/index.html">Fale Conosco</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <h1 style="font-size: 3.5em;">Seja Bem-Vindo(a) ao AgroConnect!</h1>
+            <p class="tagline" style="font-size: 1.3em;">Comece escolhendo seu perfil para preencher seus dados de cadastro!</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" id="cadastro-form">
+            <h2 class="section-title" style="font-size: 2.2em;">📝 Seus Dados</h2>
+
+            <div class="content-section form-center"> 
+                
+                <div class="card form-card"> 
+
+                    <div class="perfil-opcoes-grid">
+                        <label class="perfil-opcao">
+                            <input type="radio" name="perfil" value="agricultor" checked>
+                            <span class="perfil-opcao-span"><i class="fa-solid fa-seedling"></i> Agricultor</span>
+                        </label>
+
+                        <label class="perfil-opcao">
+                            <input type="radio" name="perfil" value="comerciante">
+                            <span class="perfil-opcao-span"><i class="fa-solid fa-store"></i> Comerciante</span>
+                        </label>
+
+                        <label class="perfil-opcao">
+                            <input type="radio" name="perfil" value="familia">
+                            <span class="perfil-opcao-span"><i class="fa-solid fa-users"></i> Família Beneficiada</span>
+                        </label>
+                    </div>
+
+                    <form id="form-registro">
+                        
+                        <div class="input-group">
+                            <label for="nomeCompleto"><i class="fa-solid fa-user"></i> Nome Completo</label>
+                            <input type="text" id="nomeCompleto" placeholder="Seu nome e sobrenome" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="documento" id="labelDocumento"><i class="fa-solid fa-id-card"></i> CPF ou CNPJ</label>
+                            <input type="text" id="documento" required placeholder="Apenas números">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="email"><i class="fa-solid fa-envelope"></i> E-mail</label>
+                            <input type="email" id="email" placeholder="seu.email@exemplo.com" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="senha"><i class="fa-solid fa-lock"></i> Senha</label>
+                        <div class="password-input-container">
+                            <input type="password" id="senha" placeholder="Mínimo 8 caracteres" required>
+                            <span class="toggle-password" data-target="senha"><i class="fa-solid fa-eye"></i></span>
+                        </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="confirmaSenha"><i class="fa-solid fa-lock"></i> Confirmar Senha</label>
+                            <div class="password-input-container">
+                                <input type="password" id="confirmaSenha" placeholder="Repita sua senha" required>
+                                <span class="toggle-password" data-target="confirmaSenha"><i class="fa-solid fa-eye"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="input-group campo-id-social" id="campoIdSocial" style="display: none;">
+                            <label for="idSocial"><i class="fa-solid fa-hand-holding-heart"></i> Número do Programa Social / NIS</label>
+                            <input type="text" id="idSocial" placeholder="Ex: Número do Bolsa Família" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="cep"><i class="fa-solid fa-location-dot"></i> CEP</label>
+                            <input type="text" id="cep" required placeholder="Apenas números">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="endereco"><i class="fa-solid fa-map-marker-alt"></i> Endereço Completo (Rua, Número)</label>
+                            <input type="text" id="endereco" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="telefone"><i class="fa-solid fa-phone"></i> Telefone</label>
+                            <input type="text" id="telefone" placeholder="(DD) 9XXXX-XXXX" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 30px; font-size: 1.05em;">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Finalizar Cadastro
+                        </button>
+                    </form>
+                    
+                    <p style="margin-top: 20px; text-align: center; font-size: 0.95em;">
+                        Já tem uma conta? <a href="#" style="color: var(--primary); font-weight: 600;">Faça Login aqui</a>.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section"><h4>Sobre</h4><ul><li><a href="#">Quem Somos</a></li></ul></div>
+            <div class="footer-section"><h4>Recursos</h4><ul><li><a href="#">Blog</a></li></ul></div>
+            <div class="footer-section"><h4>Legal</h4><ul><li><a href="#">Privacidade</a></li></ul></div>
+            <div class="footer-section"><h4>Conecte-se</h4><ul><li><a href="#">Twitter</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AgroConnect. Todos os direitos reservados. Transformando a agricultura, combatendo a fome.</p>
+        </div>
+    </footer>
+</body>
+</html> 

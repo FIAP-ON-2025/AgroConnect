@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConnect - Funcionalidades</title>
+    <link rel="icon" href="../logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../logo_horizontal_ofc.png" alt="AgroConnect Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../fale-conosco/index.html">Fale Conosco</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <h1 style="font-size: 3.5em;">Painel de Controle</h1>
+            <p class="tagline" style="font-size: 1.3em;">Gerencie sua produção de forma inteligente</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2 class="section-title" style="font-size: 2.2em;">☀️ Previsão do Tempo</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <span class="card-icon" style="font-size: 2.5em;">☀️</span>
+                    <h3>Hoje</h3>
+                    <p style="font-size: 1.2em; font-weight: 700; color: var(--primary); margin: 8px 0;">26°C</p>
+                    <p style="font-size: 0.9em; line-height: 1.5;">Céu limpo e ensolarado</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon" style="font-size: 2.5em;">🌧️</span>
+                    <h3>Amanhã</h3>
+                    <p style="font-size: 1.2em; font-weight: 700; color: var(--primary); margin: 8px 0;">19°C</p>
+                    <p style="font-size: 0.9em; line-height: 1.5;">Possibilidade de chuva</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon" style="font-size: 2.5em;">🌦️</span>
+                    <h3>Quinta-feira</h3>
+                    <p style="font-size: 1.2em; font-weight: 700; color: var(--primary); margin: 8px 0;">21°C</p>
+                    <p style="font-size: 0.9em; line-height: 1.5;">Parcialmente nublado</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon" style="font-size: 2.5em;">☁️</span>
+                    <h3>Sexta-feira</h3>
+                    <p style="font-size: 1.2em; font-weight: 700; color: var(--primary); margin: 8px 0;">23°C</p>
+                    <p style="font-size: 0.9em; line-height: 1.5;">Nublado com sol</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title" style="font-size: 2.2em;">📊 Resumo da Produção</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <span class="card-icon" style="font-size: 2.5em;">🥬</span>
+                    <h3 style="font-size: 1.2em;">Alface</h3>
+                    <p id="alface" style="font-size: 0.95em; font-weight: 600; color: var(--primary); margin: 10px 0;"></p>
+                    <button class="btn btn-primary" onclick="atualizarEstoque('alface')" style="margin-top: 10px; font-size: 0.85em;">
+                        Atualizar Estoque
+                    </button>
+                </div>
+                <div class="card">
+                    <span class="card-icon" style="font-size: 2.5em;">🍅</span>
+                    <h3 style="font-size: 1.2em;">Tomates</h3>
+                    <p id="tomates" style="font-size: 0.95em; font-weight: 600; color: var(--primary); margin: 10px 0;"></p>
+                    <button class="btn btn-primary" onclick="atualizarEstoque('tomates')" style="margin-top: 10px; font-size: 0.85em;">
+                        Atualizar Estoque
+                    </button>
+                </div>
+                <div class="card">
+                    <span class="card-icon" style="font-size: 2.5em;">🍍</span>
+                    <h3 style="font-size: 1.2em;">Abacaxi</h3>
+                    <p id="abacaxi" style="font-size: 0.95em; font-weight: 600; color: var(--primary); margin: 10px 0;"></p>
+                    <button class="btn btn-primary" onclick="atualizarEstoque('abacaxi')" style="margin-top: 10px; font-size: 0.85em;">
+                        Atualizar Estoque
+                    </button>
+                </div>
+                <div class="card">
+                    <span class="card-icon" style="font-size: 2.5em;">🥕</span>
+                    <h3 style="font-size: 1.2em;">Cenouras</h3>
+                    <p id="cenouras" style="font-size: 0.95em; font-weight: 600; color: var(--primary); margin: 10px 0;"></p>
+                    <button class="btn btn-primary" onclick="atualizarEstoque('cenouras')" style="margin-top: 10px; font-size: 0.85em;">
+                        Atualizar Estoque
+                    </button>
+                </div>
+            </div>
+
+            <div class="content-section" style="margin-top: 60px;">
+                <div class="content-text">
+                    <h2 style="font-size: 2em;">📅 Vencimento da Safra</h2>
+                    <p style="font-size: 1em; line-height: 1.7;">Vencimento aproximado: <strong>15/03/2025</strong></p>
+                    <p style="font-size: 0.95em; line-height: 1.6;">Planeje suas ações e notifique os beneficiários.</p>
+                    <div class="buttons-group" style="margin-top: 30px;">
+                        <button class="btn btn-primary" onclick="notificarBeneficiarios()" style="font-size: 0.9em;">
+                            <i class="fa-solid fa-bell"></i> Notificar Beneficiários
+                        </button>
+                    </div>
+                </div>
+                <div class="content-visual" style="font-size: 4em;">
+                    📅
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title" style="font-size: 2.2em;">⚠️ Alertas Importantes</h2>
+            <div class="cards-grid">
+                <div class="card" style="border-left: 4px solid var(--alert-color);">
+                    <span class="card-icon" style="font-size: 2.5em;">🌩️</span>
+                    <h3 style="color: var(--alert-color); font-size: 1.2em;">Alerta Meteorológico</h3>
+                    <p style="font-size: 0.9em; line-height: 1.6;">Possibilidade de tempestade na sexta-feira. Proteja suas culturas e equipamentos.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--alert-color);">
+                    <span class="card-icon" style="font-size: 2.5em;">📉</span>
+                    <h3 style="color: var(--alert-color); font-size: 1.2em;">Estoque Baixo</h3>
+                    <p style="font-size: 0.9em; line-height: 1.6;">Estoque de alface está baixo. Considere repor ou planejar nova colheita.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title" style="font-size: 2.2em;">🧮 Calculadora de Safra</h2>
+            <div class="content-section">
+                <div class="content-text">
+                    <h2 style="font-size: 2em;">Calcule sua Produção</h2>
+                    <p style="font-size: 0.95em; line-height: 1.6;">Estime a produção total, receita esperada e média por hectare.</p>
+                    
+                    <div style="margin-top: 25px;">
+                        <div class="input-group">
+                            <label style="font-size: 0.9em;"><i class="fa-solid fa-ruler-combined"></i> Área (hectares)</label>
+                            <input type="number" id="area" placeholder="Ex: 10" value="10" style="font-size: 0.9em;">
+                        </div>
+
+                        <div class="input-group">
+                            <label style="font-size: 0.9em;"><i class="fa-solid fa-chart-line"></i> Produtividade (t/ha)</label>
+                            <input type="number" id="produtividade" placeholder="Ex: 5.5" value="5.5" step="0.1" style="font-size: 0.9em;">
+                        </div>
+
+                        <div class="input-group">
+                            <label style="font-size: 0.9em;"><i class="fa-solid fa-dollar-sign"></i> Preço por tonelada (R$)</label>
+                            <input type="number" id="preco" placeholder="Ex: 1200" value="1200" style="font-size: 0.9em;">
+                        </div>
+
+                        <button class="btn btn-primary" onclick="calcularSafra()" style="width: 100%; margin-top: 20px; font-size: 0.9em;">
+                            <i class="fa-solid fa-calculator"></i> Calcular Safra
+                        </button>
+                    </div>
+                </div>
+                <div class="content-visual" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; background: var(--gray-light);">
+                    <div style="font-size: 2em; margin-bottom: 12px;">📊</div>
+                    <div id="resultados" style="width: 100%; text-align: left;">
+                        <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 8px 12px; border-radius: 8px; margin-bottom: 8px; border-left: 3px solid #00d4ff;">
+                            <div style="font-size: 20px; color: var(--gray-dark); font-weight: 600; margin-bottom: 2px;">📦 Produção Total</div>
+                            <div id="producaoTotal" style="font-size: 25px; font-weight: 700; color: var(--primary);">55.00 t</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 8px 12px; border-radius: 8px; margin-bottom: 8px; border-left: 3px solid #ff6b6b;">
+                            <div style="font-size: 20px; color: var(--gray-dark); font-weight: 600; margin-bottom: 2px;">💰 Receita Estimada</div>
+                            <div id="receitaEstimada" style="font-size: 25px; font-weight: 700; color: var(--primary);">R$ 66.000,00</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); padding: 8px 12px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid #9b59b6;">
+                            <div style="font-size: 20px; color: var(--gray-dark); font-weight: 600; margin-bottom: 2px;">📈 Média por Hectare</div>
+                            <div id="mediaPorHa" style="font-size: 25px; font-weight: 700; color: var(--primary);">R$ 6.600,00</div>
+                        </div>
+                        <button class="btn btn-secondary" onclick="contatarComerciantes()" style="width: 100%; font-size: 25px; padding: 8px 10px;">
+                            <i class="fa-solid fa-handshake"></i> Contatar Comerciantes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre</h4>
+                <ul>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Nossa Missão</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Documentação</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Conecte-se</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AgroConnect. Todos os direitos reservados. Transformando a agricultura, combatendo a fome.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        const estoque = {
+            alface: 70,
+            tomates: 235,
+            abacaxi: 100,
+            cenouras: 55
+        };
+
+        function atualizarEstoque(item) {
+            const valor = prompt(`Digite o novo valor de estoque para ${item}:`);
+            if (valor !== null && valor !== '') {
+                estoque[item] = parseInt(valor);
+                mostrarEstoque(item);
+            }
+        }
+
+        function mostrarEstoque(item) {
+            const pElement = document.getElementById(item);
+            if (pElement) {
+                pElement.textContent = `Estoque: ${estoque[item]} unidades`;
+            }
+        }
+
+        function calcularSafra() {
+            const area = parseFloat(document.getElementById('area').value) || 0;
+            const produtividade = parseFloat(document.getElementById('produtividade').value) || 0;
+            const preco = parseFloat(document.getElementById('preco').value) || 0;
+
+            const producaoTotal = area * produtividade;
+            const receitaTotal = producaoTotal * preco;
+            const mediaPorHa = receitaTotal / area;
+
+            document.getElementById('producaoTotal').textContent = `${producaoTotal.toFixed(2)} t`;
+            document.getElementById('receitaEstimada').textContent = `R$ ${receitaTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            document.getElementById('mediaPorHa').textContent = `R$ ${mediaPorHa.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
+
+        function notificarBeneficiarios() {
+            alert('Notificação enviada com sucesso para todos os beneficiários cadastrados!');
+        }
+
+        function contatarComerciantes() {
+            alert('Abrindo lista de comerciantes disponíveis na sua região...');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            Object.keys(estoque).forEach(mostrarEstoque);
+            calcularSafra();
+        });
+    </script>
+</body>
+</html>
