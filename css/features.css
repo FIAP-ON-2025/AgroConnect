@@ -1,0 +1,17 @@
+.page-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.producao,
+.alerta,
+.vencimento-info,
+.calculadora-safra {
+    box-shadow: var(--shadow-md);
+    border-radius: 12px;
+}
+

@@ -8,7 +8,7 @@
     --primary: #1b5e20;
     --secondary: #4e8c4e;
     --accent: #7cb342;
-    --dark: #ffaa00; /* Laranja/Amarelo */
+    --dark: #ffaa00;
     --light: #ffffff;
     --gray-light: #f5f2e9;
     --gray-medium: #e9ecef;
@@ -19,11 +19,10 @@
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
     
-    /* Variáveis necessárias para compatibilidade com a lógica */
-    --verde: var(--secondary);        
-    --laranja: var(--alert-color);      
-    --marrom: var(--gray-dark);       
-    --bege: var(--gray-light);         
+    --verde: var(--secondary);
+    --laranja: var(--alert-color);
+    --marrom: var(--gray-dark);
+    --bege: var(--gray-light);
     --branco: var(--light);
     --sombra: 0 4px 10px rgba(0, 0, 0, 0.1);
     --bs-success: var(--verde);
@@ -119,32 +118,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 600px; /* Base Home */
-}
-
-/* Animações e Pseudo-elementos (mantidos da home) */
-header::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(124, 179, 66, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: pulse 8s ease-in-out infinite;
-}
-
-header::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -5%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(46, 125, 50, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: pulse 10s ease-in-out infinite reverse;
+    min-height: 600px;
 }
 
 .hero-content {
@@ -155,7 +129,7 @@ header::after {
 }
 
 header h1 {
-    font-size: 4.5em; /* Base Home */
+    font-size: 4.5em;
     font-weight: 800;
     letter-spacing: -1.5px;
     margin-bottom: 20px;
@@ -171,7 +145,6 @@ header .tagline {
     animation: slideUp 0.8s ease 0.2s both;
 }
 
-/* Animações */
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -182,31 +155,6 @@ header .tagline {
     50% { opacity: 0.8; }
 }
 
-/* Botões CTA */
-.cta-primary {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--dark);
-    padding: 16px 48px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.05em;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    box-shadow: var(--shadow-md);
-    animation: slideUp 0.8s ease 0.4s both;
-}
-
-.cta-primary:hover {
-    background: #9ccc65;
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-
-/* ======== CONTEÚDO PRINCIPAL E SEÇÕES ======== */
 main {
     flex: 1;
     padding: 100px 40px;
@@ -216,14 +164,14 @@ main {
 }
 
 .section {
-    margin-bottom: 120px; /* Base Home */
+    margin-bottom: 120px;
 }
 
 .section-title {
-    font-size: 3em; /* Base Home */
+    font-size: 3em;
     font-weight: 800;
     color: var(--dark);
-    margin-bottom: 60px; /* Base Home */
+    margin-bottom: 60px;
     letter-spacing: -1px;
     position: relative;
     padding-bottom: 20px;
@@ -240,7 +188,6 @@ main {
     border-radius: 2px;
 }
 
-/* Grid de Cards */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -256,10 +203,9 @@ main {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-sm); 
+    box-shadow: var(--shadow-sm);
 }
 
-/* Efeito Hover do Card (mantido do Funcionalidades/Home) */
 .card::before {
     content: '';
     position: absolute;
@@ -304,7 +250,6 @@ main {
     margin: 0;
 }
 
-/* Seção de Conteúdo (1fr 1fr) */
 .content-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -339,7 +284,6 @@ main {
     box-shadow: var(--shadow-lg);
 }
 
-/* Botões do Content Section */
 .buttons-group {
     display: flex;
     gap: 20px;
@@ -399,10 +343,77 @@ main {
     box-shadow: var(--shadow-md);
 }
 
+.cta-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--dark);
+    padding: 16px 48px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05em;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    animation: slideUp 0.8s ease 0.4s both;
+}
 
-/* ====================================================================
-   6. RODAPÉ 
-   ==================================================================== */
+.cta-primary:hover {
+    background: #9ccc65;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.content-section.form-center {
+    grid-template-columns: 1fr !important;
+    max-width: 650px;
+    margin: 0 auto;
+    gap: 0;
+}
+
+.form-card {
+    border: none !important;
+    box-shadow: var(--shadow-lg) !important;
+    padding: 50px !important;
+    margin-bottom: 0 !important;
+    background: var(--light) !important;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--gray-dark, #53361a);
+    margin-bottom: 6px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--gray-medium, #e9ecef);
+    border-radius: 10px;
+    font-size: 0.95em;
+    background: var(--light, white);
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.3s ease;
+    color: var(--gray-dark);
+    font-family: inherit;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--accent, #7cb342);
+}
+
 footer {
     background: var(--dark);
     color: var(--light);
@@ -451,177 +462,6 @@ footer {
     opacity: 0.8;
 }
 
-
-/* ====================================================================
-   7. FUNCIONALIDADES (CLASSES ADICIONADAS)
-   ==================================================================== */
-
-/* Centralização do Formulário (Cadastro/Fale Conosco) */
-.content-section.form-center {
-    grid-template-columns: 1fr !important;
-    max-width: 650px;
-    margin: 0 auto;
-    gap: 0;
-}
-
-.form-card {
-    /* Sobrescreve o estilo base do .card para ser mais proeminente */
-    border: none !important;
-    box-shadow: var(--shadow-lg) !important;
-    padding: 50px !important;
-    margin-bottom: 0 !important;
-    background: var(--light) !important;
-}
-
-/* Estilo para Títulos/Elementos da Página de Funcionalidades */
-.page-content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-/* Estilo para Elementos de Grid (Funcionalidades) */
-.producao, .alerta, .vencimento-info, .calculadora-safra {
-    box-shadow: var(--shadow-md);
-    border-radius: 12px;
-}
-
-/* Estilo do Input Group UNIVERSAL (Para Formulários e Calculadora) */
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    font-size: 0.9em;
-    font-weight: 600;
-    color: var(--gray-dark, #53361a);
-    margin-bottom: 6px;
-}
-
-.input-group input,
-.input-group textarea,
-.input-group select {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid var(--gray-medium, #e9ecef);
-    border-radius: 10px;
-    font-size: 0.95em;
-    background: var(--light, white);
-    box-shadow: var(--shadow-sm);
-    transition: border-color 0.3s ease;
-    color: var(--gray-dark);
-    font-family: inherit;
-}
-
-.input-group input:focus,
-.input-group textarea:focus,
-.input-group select:focus {
-    outline: none;
-    border-color: var(--accent, #7cb342);
-}
-
-/* Específico para TEXTAREA (Fale Conosco) */
-.input-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* Específico para SELECT (Fale Conosco) */
-.input-group select {
-    -webkit-appearance: none; 
-    -moz-appearance: none;    
-    appearance: none;         
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234e8c4e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-}
-
-
-/* Estilo para Senha com Toggle */
-.password-input-container {
-    position: relative;
-    width: 100%;
-}
-
-.password-input-container input {
-    padding-right: 40px; 
-}
-
-.toggle-password {
-    position: absolute;
-    right: 15px; 
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: var(--gray-dark);
-    font-size: 0.9em;
-}
-
-.toggle-password:hover {
-    color: var(--primary); 
-}
-
-/* Estilo para seleção de perfil (Cadastro) */
-.perfil-opcoes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.perfil-opcao {
-    display: block; 
-    cursor: pointer;
-    padding: 0;
-    border-radius: 8px; 
-    transition: all 0.2s ease-in-out;
-}
-
-.perfil-opcao-span {
-    display: block; 
-    text-align: center;
-    padding: 15px 10px;
-    border-radius: 8px;
-    border: 2px solid var(--gray-medium, #e9ecef);
-    background-color: var(--light, #ffffff);
-    transition: all 0.2s ease-in-out;
-    font-size: 0.85em;
-    font-weight: 600;
-    color: var(--gray-dark, #53361a);
-}
-
-.perfil-opcao input[type="radio"] {
-    display: none;
-}
-
-.perfil-opcao input[type="radio"]:checked + .perfil-opcao-span {
-    color: var(--light, white);
-    background-color: var(--primary, #1b5e20);
-    border-color: var(--primary, #1b5e20);
-    box-shadow: 0 3px 6px rgba(27, 94, 32, 0.4); 
-    transform: translateY(-2px); 
-}
-
-/* Estilo para validação de erro (Fale Conosco) */
-.error {
-    border: 2px solid red !important;
-}
-.error-message {
-    font-size: 0.85em;
-    margin-top: 5px;
-    display: block;
-    color: red !important;
-}
-
-
-/* ====================================================================
-   8. RESPONSIVIDADE (ADAPTADA AO HOME)
-   ==================================================================== */
-
 @media (max-width: 1024px) {
     nav { padding: 20px 30px; }
     header { padding: 80px 30px; min-height: 500px; }
@@ -648,5 +488,5 @@ footer {
     header h1 { font-size: 1.8em; }
     .section { margin-bottom: 60px; }
     .section-title { font-size: 1.5em; }
-    .perfil-opcoes-grid { grid-template-columns: 1fr; }
 }
+
