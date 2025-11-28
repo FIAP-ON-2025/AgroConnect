@@ -15,3 +15,21 @@
     border-radius: 12px;
 }
 
+.resgate-card-urgente {
+    /* Cor de borda de alerta (Laranja/Amarelo) */
+    border: 2px solid var(--dark); 
+    background: #fffde7; /* Fundo mais claro para urgência */
+    box-shadow: var(--shadow-md);
+}
+
+/* Estilo para Preços */
+.preco-original {
+    text-decoration: line-through;
+    color: var(--gray-medium);
+    font-size: 0.9em;
+}
+.preco-resgate {
+    color: var(--primary);
+    font-size: 1.5em;
+    font-weight: 800;
+}

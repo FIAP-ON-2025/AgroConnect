@@ -60,7 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         alert(`Registro de ${perfil.toUpperCase()} efetuado com sucesso! Redirecionando para as Funcionalidades.`);
        
-        window.location.href = '../pages/features.html'; 
+        if (perfil === 'familia') {
+            window.location.href = '../pages/features-familia.html';
+        } else {
+            window.location.href = '../pages/features.html';
+        }
         
     });
 });
