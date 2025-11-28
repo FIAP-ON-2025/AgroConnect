@@ -6,6 +6,29 @@ function validarEmail(email){
     return email.includes("@") && email.includes(".");
 }
 
+function validarNome(nome) {
+    const partesNome = nome.trim().split(/\s+/);
+    
+    if (partesNome.length < 2) {
+        return { valido: false, mensagem: "Digite nome e sobrenome" };
+    }
+    
+    for (let parte of partesNome) {
+        if (parte.length < 2) {
+            return { valido: false, mensagem: "Nome e sobrenome devem ter ao menos 2 letras cada" };
+        }
+    }
+    
+    return { valido: true };
+}
+
+function validarMensagem(mensagem) {
+    if (mensagem.length > 500) {
+        return { valido: false, mensagem: `Mensagem muito longa (${mensagem.length}/500 caracteres)` };
+    }
+    return { valido: true };
+}
+
 document.getElementById('assunto').addEventListener('change', function() {
     const outrosAssunto = document.getElementById('outrosAssunto');
     const outrosAssuntoLabel = document.getElementById('outrosAssuntoLabel');
@@ -33,13 +56,12 @@ const exibirError =(inputElement,mensagem)=>{
  
 }
 
- const removeErro=(inputElement)=>{
- inputElement.classList.remove("error");
- let erroMensagem =inputElement.nextElementSibling;
- if(erroMensagem && erroMensagem.classList.contains("error-message")){
-    erroMensagem.remove();
- }
- 
+const removeErro=(inputElement)=>{
+    inputElement.classList.remove("error");
+    let erroMensagem =inputElement.nextElementSibling;
+    if(erroMensagem && erroMensagem.classList.contains("error-message")){
+        erroMensagem.remove();
+    }
 }
  
 cadastroForm.addEventListener("submit", function(e){
@@ -64,23 +86,38 @@ cadastroForm.addEventListener("submit", function(e){
     removeErro(mensagemInput);
     removeErro(telefoneInput);
  
-     if(mensagem ===""){
-        exibirError(mensagemInput, "Mensagem obrigatória");
-        isValid=false;
-     }
-      if(telefone ===""){
-        exibirError(telefoneInput, "Telefone obrigatório");
-        isValid=false;
-     }
     if(nome ===""){
         exibirError(nomeInput,"Nome obrigatório");
         isValid=false;
+    } else {
+        const resultadoValidacao = validarNome(nome);
+        if (!resultadoValidacao.valido) {
+            exibirError(nomeInput, resultadoValidacao.mensagem);
+            isValid=false;
+        }
     }
+
     if(email ===""){
         exibirError(emailInput, "Email obrigatório");
         isValid=false;
-    }else if(!validarEmail(email)){
+    } else if(!validarEmail(email)){
         exibirError(emailInput,"Por favor, insira um email válido");
+        isValid=false;
+    }
+
+    if(mensagem ===""){
+        exibirError(mensagemInput, "Mensagem obrigatória");
+        isValid=false;
+    } else {
+        const resultadoValidacaoMensagem = validarMensagem(mensagem);
+        if (!resultadoValidacaoMensagem.valido) {
+            exibirError(mensagemInput, resultadoValidacaoMensagem.mensagem);
+            isValid=false;
+        }
+    }
+    
+    if(telefone ===""){
+        exibirError(telefoneInput, "Telefone obrigatório");
         isValid=false;
     }
     
@@ -88,9 +125,8 @@ cadastroForm.addEventListener("submit", function(e){
         return;
     }
     
-     const mensagemEnviada = document.getElementById('mensagemEnviada');
+    const mensagemEnviada = document.getElementById('mensagemEnviada');
     mensagemEnviada.textContent = `Obrigado, ${nome}! Sua mensagem foi enviada com sucesso e será respondida em breve.`;
 
     cadastroForm.reset();
-
 })
